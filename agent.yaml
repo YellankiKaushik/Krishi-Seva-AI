@@ -1,0 +1,17 @@
+spec_version: "0.1.0"
+name: krishi-seva-agent
+version: 0.1.0
+description: "Predicts agricultural risks from weather and provides actionable farming advice"
+
+model:
+  preferred: claude-sonnet-4-5-20250929
+
+skills:
+  - weather_analyzer
+  - risk_predictor
+  - advisory_generator
+
+tags:
+  - agriculture
+  - ai-agent
+  - hackathon
