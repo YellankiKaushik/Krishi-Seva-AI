@@ -8,15 +8,19 @@ allowed-tools: Read
 
 ## Instructions
 
-- Use the weather analysis provided.
-- Identify agricultural risks based on patterns:
+- Analyze the weather insights carefully.
 
-  - High humidity + rain → fungal disease risk
-  - High temperature → heat stress risk
-  - No rain + high temperature → irrigation needed
-  - Strong wind or rain → avoid spraying
+- Identify risks using patterns:
 
-- Assign a risk level:
+  - High humidity + rain → High fungal disease risk
+  - High temperature (>30°C) → Heat stress risk
+  - No rain + high temperature → Irrigation needed
+  - Strong wind or rain → Avoid spraying
+
+- If key data is missing, respond:
+  "Insufficient data to assess full risk."
+
+- Assign risk level:
   - Low
   - Medium
   - High
