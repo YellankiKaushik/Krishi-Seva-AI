@@ -1,3 +1,2 @@
-node_modules/
-dist/
-.gitagent/
+__pycache__/
+*.txt
