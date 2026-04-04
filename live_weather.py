@@ -12,8 +12,6 @@ def get_weather():
         response = requests.get(url)
         data = response.json()
 
-        # print("\nDEBUG RESPONSE:", data)
-
         if data.get("cod") != 200:
             print("\n❌ API Error:", data.get("message"))
             return None, None, None
@@ -29,7 +27,7 @@ def get_weather():
         return None, None, None
 
 
-# 🔹 Step 2: Risk Prediction (Agent Thinking)
+# 🔹 Step 2: Risk Prediction
 def analyze_risk(temp, humidity, condition):
     risks = []
 
@@ -45,7 +43,7 @@ def analyze_risk(temp, humidity, condition):
     return risks
 
 
-# 🔹 Step 3: Advisory Generation (Agent Output)
+# 🔹 Step 3: Advisory Generation
 def generate_advice(risks):
     advice = []
 
@@ -63,17 +61,12 @@ def generate_advice(risks):
     return advice
 
 
-# 🔹 Main Execution Flow
+# 🔹 Main Execution (REAL SYSTEM)
 def main():
     print("\n🚀 Fetching live weather data...")
 
     temp, humidity, condition = get_weather()
-    
-    # DEMO MODE (temporary)
-    # temp = 30
-    # humidity = 85
-    # condition = "rain"
-    
+
     if temp is None:
         print("\n⚠️ Failed to fetch weather data.")
         return
@@ -84,7 +77,6 @@ def main():
     print(f"Humidity: {humidity}%")
     print(f"Condition: {condition}")
 
-    # 🔥 Decision Engine
     risks = analyze_risk(temp, humidity, condition)
     advice = generate_advice(risks)
 
@@ -102,5 +94,47 @@ def main():
         print(f"- {a}")
 
 
+# 🔹 TEST MODE (ALL SCENARIOS)
+def run_all_tests():
+    print("\n==============================")
+    print("🚀 RUNNING ALL TEST SCENARIOS")
+    print("==============================")
+
+    test_cases = [
+        {"name": "NORMAL CASE", "temp": 30, "humidity": 40, "condition": "clear sky"},
+        {"name": "HIGH HUMIDITY", "temp": 30, "humidity": 85, "condition": "cloudy"},
+        {"name": "RAIN CONDITION", "temp": 28, "humidity": 60, "condition": "rain"},
+        {"name": "EXTREME HEAT", "temp": 38, "humidity": 30, "condition": "clear sky"},
+    ]
+
+    for test in test_cases:
+        print("\n------------------------------")
+        print(f"🧪 TEST: {test['name']}")
+        print("------------------------------")
+
+        temp = test["temp"]
+        humidity = test["humidity"]
+        condition = test["condition"]
+
+        print(f"Temperature: {temp}°C")
+        print(f"Humidity: {humidity}%")
+        print(f"Condition: {condition}")
+
+        risks = analyze_risk(temp, humidity, condition)
+        advice = generate_advice(risks)
+
+        print("\n⚠️ IDENTIFIED RISKS")
+        if risks:
+            for r in risks:
+                print(f"- {r}")
+        else:
+            print("- No major risks detected")
+
+        print("\n🌱 ADVICE")
+        for a in advice:
+            print(f"- {a}")
+
+
+# 🔹 SWITCH MODE HERE
 if __name__ == "__main__":
     main()
