@@ -29,21 +29,24 @@ def get_weather():
 
 # 🔹 Step 2: Risk Prediction
 def analyze_risk(temp, humidity, condition):
-    print("\n[DEBUG] Risk Analysis Started")
-    print(f"[DEBUG] Input → Temp: {temp}, Humidity: {humidity}, Condition: {condition}")
+    # print("\n[DEBUG] Risk Analysis Started")
+    # print(f"[DEBUG] Input → Temp: {temp}, Humidity: {humidity}, Condition: {condition}")
     risks = []
 
     if humidity >= 75:
-        print("[DEBUG] Rule Triggered: High Humidity → Fungal Risk")
+        # print("[DEBUG] Rule Triggered: High Humidity → Fungal Risk")
         risks.append("High fungal disease risk")
 
     if temp >= 35:
-        print("[DEBUG] Rule Triggered: High Temperature → Heat Stress")
+        # print("[DEBUG] Rule Triggered: High Temperature → Heat Stress")
         risks.append("Heat stress risk")
 
     if any(word in condition.lower() for word in ["rain", "drizzle", "storm", "shower", "thunder"]):
-        print("[DEBUG] Rule Triggered: Rain-like Condition → Avoid Spraying")
+        # print("[DEBUG] Rule Triggered: Rain-like Condition → Avoid Spraying")
         risks.append("Avoid spraying due to rain")
+
+    if any(word in condition.lower() for word in ["smoke", "haze"]):
+        risks.append("Air quality may affect crop health")
 
     return risks
 
@@ -52,7 +55,7 @@ def analyze_risk(temp, humidity, condition):
 
 # 🔹 Step 3: Advisory Generation
 def generate_advice(risks):
-    print("\n[DEBUG] Generating Advice Based on Risks:", risks)
+    # print("\n[DEBUG] Generating Advice Based on Risks:", risks)
     advice = []
 
     if not risks:
@@ -146,3 +149,6 @@ def run_all_tests():
 # 🔹 SWITCH MODE HERE
 if __name__ == "__main__":
     main()
+# for testing all the cases 
+# if __name__ == "__main__":
+#run_all_tests()
