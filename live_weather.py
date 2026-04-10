@@ -1,7 +1,7 @@
 import requests
 
 API_KEY = "af5422ca4c776de67d2fc96043f089e6"
-CITY = "Hyderabad"
+CITY = input("Enter city (default: Hyderabad): ") or "Hyderabad"
 
 
 # 🔹 Step 1: Fetch Live Weather
@@ -29,15 +29,20 @@ def get_weather():
 
 # 🔹 Step 2: Risk Prediction
 def analyze_risk(temp, humidity, condition):
+    print("\n[DEBUG] Risk Analysis Started")
+    print(f"[DEBUG] Input → Temp: {temp}, Humidity: {humidity}, Condition: {condition}")
     risks = []
 
     if humidity >= 75:
+        print("[DEBUG] Rule Triggered: High Humidity → Fungal Risk")
         risks.append("High fungal disease risk")
 
     if temp >= 35:
+        print("[DEBUG] Rule Triggered: High Temperature → Heat Stress")
         risks.append("Heat stress risk")
 
-    if "rain" in condition.lower():
+    if any(word in condition.lower() for word in ["rain", "drizzle", "storm", "shower", "thunder"]):
+        print("[DEBUG] Rule Triggered: Rain-like Condition → Avoid Spraying")
         risks.append("Avoid spraying due to rain")
 
     return risks
@@ -45,6 +50,7 @@ def analyze_risk(temp, humidity, condition):
 
 # 🔹 Step 3: Advisory Generation
 def generate_advice(risks):
+    print("\n[DEBUG] Generating Advice Based on Risks:", risks)
     advice = []
 
     if not risks:
