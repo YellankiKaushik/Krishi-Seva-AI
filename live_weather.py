@@ -48,6 +48,8 @@ def analyze_risk(temp, humidity, condition):
     return risks
 
 
+
+
 # 🔹 Step 3: Advisory Generation
 def generate_advice(risks):
     print("\n[DEBUG] Generating Advice Based on Risks:", risks)
