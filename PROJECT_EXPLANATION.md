@@ -2,7 +2,7 @@
 
 ---
 
-## 1. Problem Framing (STRONG)
+## 1. Problem Framing
 
 Farming is fundamentally a series of time-sensitive decisions made under uncertainty. In India alone, over 120 million smallholder farmers face a critical "insight gap." While raw meteorological data (e.g., 85% humidity, 37°C) is accessible via weather apps, this data alone is insufficient. Real farmers do not need data; they need decisions. The inability to translate complex atmospheric metrics into explicit, timely field actions leads to preventable crop loss from disease vectors or heat stress, significant resource wastage (e.g., spraying expensive pesticides moments before rain), and decision paralysis. Krishi Seva addresses the translation gap directly, converting static numbers into immediate operational directives.
 
@@ -14,7 +14,7 @@ Krishi Seva is positioned as a **Domain-Specific AI Agricultural Assistant** and
 
 ---
 
-## 3. System Architecture (DEEP)
+## 3. System Architecture
 
 ### 3.1 High-Level Design
 
@@ -26,7 +26,7 @@ This pattern is chosen for maximum extensibility and auditability. By separating
 
 ---
 
-### 3.2 Agent Layer (CRITICAL)
+### 3.2 Agent Layer
 
 The Agent Layer is the true differentiator, built entirely on GitAgent standards:
 - **`agent.yaml`**: The capability manifest. It orchestrates the agent's identity, preferred model configurations, and maps the localized cognitive skills (`weather_analyzer`, `risk_predictor`, `advisory_generator`) that govern the system's reasoning pipeline.
@@ -48,7 +48,7 @@ The Execution Layer breathes life into the GitAgent configuration:
 
 ---
 
-## 4. Intelligence Pipeline (VERY IMPORTANT)
+## 4. Intelligence Pipeline
 
 The execution flow maps perfectly to an intelligent agent's cognitive loop:
 
@@ -87,7 +87,7 @@ Historical data shows averages; real-time data dictates action. The difference b
 
 ---
 
-## 8. Strengths (ENGINEERING LEVEL)
+## 8. Strengths
 
 - **Deep Modularity**: Strict adherence to the GitAgent standard allows developers to swap out the API schema, refine risk thresholds, or alter the agent's persona independently without cascading structural failures in the base code.
 - **Deterministic Robustness**: Zero inference latency and immunity to LLM hallucination makes the pipeline exceptionally stable in low-bandwidth, high-stakes environments.
@@ -115,7 +115,7 @@ Current scope constraints include:
 
 ---
 
-## 11. Why This Stands Out (VERY IMPORTANT)
+## 11. Why This Stands Out 
 
 Krishi Seva is not a generic hackathon prototype loosely wrapping an API; it is a meticulously engineered decision engine. 
 1. **True GitAgent Implementation**: It proves the efficacy of the GitAgent standard by physically separating the identity and bounds of intelligence from the execution pipeline. 
