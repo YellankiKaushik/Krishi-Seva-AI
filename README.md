@@ -14,7 +14,7 @@ Farmers today face a massive "insight gap." While they can access basic weather 
 ---
 
 ### 💡 Solution
-Krishi Seva acts as a specialized digital companion that "thinks" like an agronomist. It converts raw environmental data into direct, actionable directives—telling the farmer exactly **what to do** and **what to avoid** in the moment, ensuring optimal crop health and resource management.
+Krishi Seva acts as a specialized digital companion that "thinks" like an agronomist. This is not just a script — it behaves as an AI agent that performs input processing, decision-making, and action generation. It converts raw environmental data into direct, actionable directives—telling the farmer exactly **what to do** and **what to avoid** in the moment, ensuring optimal crop health and resource management.
 
 ---
 
@@ -54,6 +54,7 @@ This project strictly adheres to the GitAgent specifications, separating identit
     pip install requests
     ```
 3.  **Execute the Agent:**
+    *[`run_agent.py` acts as the entry point and triggers the full agent pipeline]*
     ```bash
     python run_agent.py
     ```
@@ -102,4 +103,4 @@ Krishi Seva empowers small-scale farmers to move from reactive to proactive farm
 ---
 
 ### 🏁 Conclusion
-Krishi Seva AI Agent demonstrates the power of agentic workflows in solving fundamental real-world problems. By simplifying complex data into reliable advice, it ensures that technology serves those who feed the world.
+The Krishi Seva AI Agent is more than just a weather tool; it is a scalable, intelligent agronomist deployed at the edge. By bridging the gap between complex meteorological data and on-the-ground farming decisions, it proves the transformative power of agentic AI. This project sets a new standard for accessible technology, empowering the agricultural backbone of the world to cultivate smarter, adapt faster, and thrive in the face of climate uncertainty.
